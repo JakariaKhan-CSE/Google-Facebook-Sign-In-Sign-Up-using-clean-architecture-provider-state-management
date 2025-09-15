@@ -6,5 +6,5 @@ abstract class AuthRepository{
   Future<UserEntity?> googleSignIn();
   Future<UserEntity?> facebookSignIn();
   Future<void> signOut();
-  Stream<UserEntity> get user;
+  Stream<UserEntity?> get user;
 }
