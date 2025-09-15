@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "674935823382",
+    "project_id": "facebook--auth-80df2",
+    "storage_bucket": "facebook--auth-80df2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:674935823382:android:0b7f45c8e98c32e6fc6937",
+        "android_client_info": {
+          "package_name": "com.example.google_facebook_sign_in"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0WLIgrqQkXis5Iv2GXDwDPtP-_3T8TE4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
