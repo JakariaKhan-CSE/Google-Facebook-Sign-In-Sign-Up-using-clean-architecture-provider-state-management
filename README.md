@@ -4,6 +4,11 @@ A new Flutter project.
 # Using Clean Architecture for design pattern and provider for state management
 # also use direct google and facebook sign in, backend firebase
 
+distributionUrl=https\://services.gradle.org/distributions/gradle-8.11.1-all.zip
+java 17 and firebase latest version
+This project run on macOS
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

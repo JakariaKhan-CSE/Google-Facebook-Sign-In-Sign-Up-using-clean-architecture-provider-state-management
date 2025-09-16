@@ -22,3 +22,14 @@ subprojects {
 tasks.register<Delete>("clean") {
     delete(rootProject.layout.buildDirectory)
 }
+plugins {
+    // Don’t specify version for these, Flutter manages them
+    id("com.android.application") apply false
+    id("org.jetbrains.kotlin.android") apply false
+
+    // ✅ Only Google services needs an explicit version
+    id("com.google.gms.google-services") version "4.4.2" apply false
+
+    // Flutter’s Gradle plugin
+    id("dev.flutter.flutter-gradle-plugin") apply false
+}
