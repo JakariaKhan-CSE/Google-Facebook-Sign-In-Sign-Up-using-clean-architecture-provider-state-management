@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_facebook_sign_in/domain/entities/user_entity.dart';
 import 'package:google_facebook_sign_in/domain/repositories/auth_repository.dart';
@@ -13,7 +14,7 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<UserEntity?> signUp(String email, String password) async {
+  Future<UserEntity?> signUp(String email, String password, BuildContext context) async {
     final credential = await _firebase_auth.createUserWithEmailAndPassword(
       email: email,
       password: password,
@@ -22,12 +23,20 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<UserEntity?> signIn(String email, String password) async {
-    final credential = await _firebase_auth.signInWithEmailAndPassword(
-      email: email,
-      password: password,
-    );
-    return _userFromFirebase(credential.user);
+  Future<UserEntity?> signIn(String email, String password, BuildContext context) async {
+    try{
+      final credential = await _firebase_auth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      print('credential: ${credential.user?.uid}');
+      return _userFromFirebase(credential.user);
+    }
+    catch(e){
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Login Failed'),backgroundColor: Colors.red,));
+      print('???>>>>>>>>Error Occured');
+    }
+
   }
 
   @override

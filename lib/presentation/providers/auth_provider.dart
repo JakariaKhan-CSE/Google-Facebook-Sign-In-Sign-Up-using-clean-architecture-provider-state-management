@@ -42,7 +42,7 @@ class AuthNotifier extends ChangeNotifier{
   }
 
   Future<void> signUp(String email, String password, BuildContext context)async{
-    _user = await authRepository.signUp(email, password);
+    _user = await authRepository.signUp(email, password, context);
     if(_user!.uid.isNotEmpty){
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Register Successful'),backgroundColor: Colors.green,));
       Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginScreen(),));
@@ -55,7 +55,7 @@ class AuthNotifier extends ChangeNotifier{
   }
 
   Future<void> signIn(String email, String password, BuildContext context)async{
-    _user = await authRepository.signIn(email, password);
+    _user = await authRepository.signIn(email, password,context);
     if(_user!.uid.isNotEmpty){
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Login Successful'),backgroundColor: Colors.green,));
       Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeScreen(),));
