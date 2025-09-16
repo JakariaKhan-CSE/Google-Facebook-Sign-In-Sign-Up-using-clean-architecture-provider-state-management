@@ -55,9 +55,9 @@ class RootPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final auth = Provider.of<AuthNotifier>(context, listen: false);
-    // if (auth.user != null) {
-    //   return HomeScreen();
-    // }
+    if (auth.user != null) {
+      return HomeScreen();
+    }
     return const AuthScreen();
   }
 }
