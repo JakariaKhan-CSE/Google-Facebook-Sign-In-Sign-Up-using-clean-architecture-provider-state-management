@@ -21,41 +21,66 @@ class AuthScreen extends StatelessWidget {
                 width: double.infinity,
                 fit: BoxFit.cover,
               ),
-              SizedBox(height: 20,),
-              Text('Hello',style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                fontWeight: FontWeight.bold
-              ),),
-              SizedBox(height: 10,),
+              SizedBox(height: 20),
+              Text(
+                'Hello',
+                style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 50),
-                child: Text('Welcome to little Drop, where you manage you daily task',style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                child: Text(
+                  'Welcome to little Drop, where you manage you daily task',
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.w400,
-                  color: Colors.grey,
-                ),textAlign: TextAlign.center,),
+                    color: Colors.grey,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
               ),
-              SizedBox(height: 30,),
-              ElevatedButton(style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.deepPurpleAccent,
-                minimumSize: Size(200, 45)
-              ),onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginScreen(),));
-              }, child: Text('Login',style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w600,
-                fontSize: 20
-              ),)),
-              SizedBox(height: 20,),
-              ElevatedButton(style: ElevatedButton.styleFrom(
-                side: BorderSide(color: Colors.deepPurpleAccent),
+              SizedBox(height: 30),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.deepPurpleAccent,
+                  minimumSize: Size(200, 45),
+                ),
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => LoginScreen()),
+                  );
+                },
+                child: Text(
+                  'Login',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  side: BorderSide(color: Colors.deepPurpleAccent),
                   backgroundColor: Colors.white,
-                  minimumSize: Size(200, 45)
-              ),onPressed: () {
-Navigator.of(context).push(MaterialPageRoute(builder: (context) => RegisterScreen(),));
-              }, child: Text('Sign Up',style: TextStyle(
-                  color: Colors.deepPurpleAccent,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 20
-              ),)),
+                  minimumSize: Size(200, 45),
+                ),
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => RegisterScreen()),
+                  );
+                },
+                child: Text(
+                  'Sign Up',
+                  style: TextStyle(
+                    color: Colors.deepPurpleAccent,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
             ],
           ),
         ),

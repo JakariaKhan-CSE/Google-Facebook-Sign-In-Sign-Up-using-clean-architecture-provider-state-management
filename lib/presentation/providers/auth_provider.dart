@@ -18,6 +18,12 @@ class AuthNotifier extends ChangeNotifier{
       return false;
     }
   }
+  bool _obsecureLogin = true;
+  bool get obsecureLogin => _obsecureLogin;
+  set obsecureLogin(bool newState){
+    _obsecureLogin = !_obsecureLogin;
+    notifyListeners();
+  }
 // Register
   final registerFormKey = GlobalKey<FormState>();
   bool registerValidateAndSave(){
@@ -29,6 +35,12 @@ class AuthNotifier extends ChangeNotifier{
     else{
       return false;
     }
+  }
+  bool _obsecureRegister = true;
+  bool get obsecureRegister => _obsecureRegister;
+  set obsecureRegister(bool newState){
+    _obsecureRegister = !_obsecureRegister;
+    notifyListeners();
   }
 
   final AuthRepository authRepository;

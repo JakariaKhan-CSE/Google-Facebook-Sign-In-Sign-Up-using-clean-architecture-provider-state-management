@@ -25,7 +25,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final auth = Provider.of<AuthNotifier>(context,listen: false);
+    final auth = Provider.of<AuthNotifier>(context,listen: true);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -70,10 +70,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     SizedBox(height: 20,),
                     TextFormField(
                       controller: passwordController,
-                      obscureText: true,
+                      obscureText: auth.obsecureRegister,
                       enableSuggestions: true,
                       keyboardType: TextInputType.text,
                       decoration: InputDecoration(
+                          suffixIcon: IconButton(onPressed: () {
+                            auth.obsecureRegister = true;
+                          }, icon: Icon(auth.obsecureRegister? Icons.visibility_off: Icons.visibility)),
                           label: Text('Password'),
                           hintText: 'Enter password',
                           border: OutlineInputBorder(
