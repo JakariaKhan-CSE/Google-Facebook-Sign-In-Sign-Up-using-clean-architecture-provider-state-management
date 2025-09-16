@@ -24,7 +24,7 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (context) => AuthProvider(AuthRepositoryImpl()),
+          create: (context) => AuthNotifier(AuthRepositoryImpl()),
         ),
       ],
       child: MyApp(),
@@ -54,7 +54,7 @@ class RootPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final auth = Provider.of<AuthProvider>(context, listen: false);
+    final auth = Provider.of<AuthNotifier>(context, listen: false);
     if (auth.user != null) {
       return HomeScreen();
     }

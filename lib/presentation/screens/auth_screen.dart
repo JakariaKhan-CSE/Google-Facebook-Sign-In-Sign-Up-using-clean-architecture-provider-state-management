@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_facebook_sign_in/presentation/screens/login_screen.dart';
+import 'package:google_facebook_sign_in/presentation/screens/register_screen.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});
@@ -36,7 +38,7 @@ class AuthScreen extends StatelessWidget {
                 backgroundColor: Colors.deepPurpleAccent,
                 minimumSize: Size(200, 45)
               ),onPressed: () {
-                
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginScreen(),));
               }, child: Text('Login',style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w600,
@@ -48,7 +50,7 @@ class AuthScreen extends StatelessWidget {
                   backgroundColor: Colors.white,
                   minimumSize: Size(200, 45)
               ),onPressed: () {
-
+Navigator.of(context).push(MaterialPageRoute(builder: (context) => RegisterScreen(),));
               }, child: Text('Sign Up',style: TextStyle(
                   color: Colors.deepPurpleAccent,
                   fontWeight: FontWeight.w600,
